@@ -1,0 +1,134 @@
+/* =========================================================
+   Hyrule Quest Board — feuille de style commune
+   A utiliser sur toutes les pages du site (accueil, quêtes,
+   lieux, ZeldaBot). Prévoir de la charger via {% static %}
+   dans base.html une fois le projet Django en place.
+   ========================================================= */
+
+/* ---- 1. Palette et tokens ---- */
+:root{
+  --parchment:#f1e2ba;
+  --parchment-dark:#e2cb92;
+  --parchment-darker:#cbab68;
+  --forest:#26402a;
+  --forest-light:#3d5c3d;
+  --gold:#b8862f;
+  --gold-bright:#e0ac45;
+  --ember:#9c3f28;
+  --ink:#3a2a18;
+  --ink-soft:#5c4630;
+  --wood:#5c3c22;
+  --wood-dark:#33210f;
+}
+
+/* ---- 2. Base ---- */
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background: var(--wood-dark);
+  background-image:
+    repeating-linear-gradient(90deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 34px),
+    radial-gradient(ellipse at 50% -10%, rgba(224,172,69,0.12), transparent 60%);
+  font-family:'EB Garamond', Georgia, serif;
+  color: var(--ink);
+  padding: 20px 16px 0;
+  min-height:100vh;
+  display:flex; flex-direction:column;
+}
+h1,h2,h3,.brand,.eyebrow{ font-family:'Cinzel', serif; }
+a{ color:inherit; text-decoration:none; }
+.wrap{ max-width:1040px; margin:0 auto; width:100%; flex:1; display:flex; flex-direction:column; }
+.icon{ width:16px; height:16px; display:inline-block; vertical-align:-3px; }
+
+a:focus-visible, button:focus-visible, input:focus-visible{
+  outline: 2px solid var(--gold-bright); outline-offset: 2px;
+}
+
+/* ---- 3. Torche décorative (header / footer) ---- */
+.torch{ position:relative; width:16px; height:26px; }
+.torch .flame{
+  position:absolute; left:2px; top:0; width:12px; height:16px;
+  background: radial-gradient(circle at 50% 30%, #ffe9a8, var(--gold-bright) 55%, var(--ember) 100%);
+  border-radius: 60% 60% 50% 50% / 70% 70% 40% 40%;
+  box-shadow: 0 0 10px 2px rgba(224,172,69,0.55);
+}
+@media (prefers-reduced-motion: no-preference){
+  .torch .flame{ animation: flicker 2.6s ease-in-out infinite; }
+}
+@keyframes flicker{
+  0%,100%{ transform: scaleY(1) scaleX(1) rotate(0deg); }
+  35%{ transform: scaleY(1.08) scaleX(0.95) rotate(-2deg); }
+  65%{ transform: scaleY(0.94) scaleX(1.05) rotate(2deg); }
+}
+.torch .stick{
+  position:absolute; left:6px; top:14px; width:4px; height:12px;
+  background: linear-gradient(var(--ink-soft), var(--wood));
+  border-radius:1px;
+}
+
+/* ---- 4. Header / navigation ---- */
+header.board{
+  background: linear-gradient(var(--wood), var(--wood-dark));
+  border: 3px solid var(--wood-dark);
+  border-radius: 10px;
+  padding: 14px 22px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(224,172,69,0.15);
+  display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+}
+.brand{ display:flex; align-items:center; gap:12px; }
+.brand h1{
+  margin:0; font-size:22px; letter-spacing:1.5px; font-weight:700;
+  background: linear-gradient(180deg, #f4d98a, var(--gold-bright) 60%, var(--gold));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.4);
+}
+.brand small{ display:block; color:#d8c6a0; font-family:'EB Garamond',serif; font-style:italic; font-size:12px; letter-spacing:0.5px; }
+nav.tabs{ display:flex; gap:8px; flex-wrap:wrap; }
+nav.tabs a{
+  font-size:13px; letter-spacing:0.5px; color:#f1e2ba; padding:7px 14px;
+  background: rgba(0,0,0,0.18); border:1px solid rgba(224,172,69,0.35); border-radius:6px;
+}
+nav.tabs a:hover{ background: rgba(224,172,69,0.22); border-color: var(--gold-bright); }
+nav.tabs a.active{ background: var(--gold); color: var(--wood-dark); border-color: var(--gold-bright); font-weight:600; }
+.admin-link{ font-size:12px; color:#d8c6a0; border:1px solid rgba(224,172,69,0.35); border-radius:6px; padding:6px 12px; display:flex; align-items:center; gap:6px; }
+
+/* ---- 5. Bannière / hero (page d'accueil) ---- */
+.hero{
+  margin-top:22px; background: var(--parchment);
+  background-image: radial-gradient(circle at 15% 20%, rgba(203,171,104,0.55), transparent 40%), radial-gradient(circle at 85% 70%, rgba(203,171,104,0.5), transparent 45%);
+  border-radius: 6px; padding: 52px 40px 46px; text-align:center;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+}
+.eyebrow{ font-size:12px; letter-spacing:3px; text-transform:uppercase; color: var(--ember); font-weight:600; }
+.hero h2{ font-size:34px; margin: 10px 0 12px; color: var(--forest); font-weight:700; }
+.hero p{ max-width:480px; margin:0 auto; color: var(--ink-soft); font-size:16px; line-height:1.6; }
+
+/* ---- 6. Cartes "portail" (liens vers les autres apps) ---- */
+.portal-grid{
+  margin-top:26px; display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:18px;
+}
+.portal-card{
+  background: linear-gradient(var(--wood), var(--wood-dark));
+  border: 1px solid rgba(224,172,69,0.3); border-radius:8px;
+  padding: 22px 18px; text-align:center;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+}
+.portal-card .icon-big{ width:28px; height:28px; color: var(--gold-bright); margin-bottom:10px; }
+.portal-card h3{ margin:0 0 6px; font-size:16px; color:#f1e2ba; letter-spacing:0.5px; }
+.portal-card p{ margin:0 0 14px; font-size:13px; color:#c8b088; line-height:1.5; }
+.portal-card a.enter{
+  display:inline-block; font-size:12px; letter-spacing:0.5px; color: var(--wood-dark);
+  background: linear-gradient(var(--gold-bright), var(--gold)); padding:7px 16px; border-radius:5px; font-weight:600;
+}
+.portal-card a.enter:hover{ filter:brightness(1.08); }
+
+/* ---- 7. Footer (décoratif, toutes pages) ---- */
+footer{ margin-top:auto; padding: 40px 0 22px; text-align:center; }
+.footer-divider{ display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:14px; }
+.footer-divider .line{ height:1px; width:80px; background: linear-gradient(90deg, transparent, rgba(224,172,69,0.5), transparent); }
+.footer-divider .icon{ width:14px; height:14px; color: var(--gold-bright); }
+footer .brand-mini{ font-family:'Cinzel',serif; font-size:13px; letter-spacing:1px; color:#e0ac45; margin-bottom:6px; }
+footer nav{ display:flex; justify-content:center; gap:16px; margin-bottom:8px; }
+footer nav a{ font-size:12px; color:#c8b088; }
+footer nav a:hover{ color:#e0ac45; }
+footer .credit{ font-size:10px; letter-spacing:1px; color:#8a7a5c; }

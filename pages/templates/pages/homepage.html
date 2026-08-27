@@ -1,0 +1,39 @@
+
+{% extends 'global/base.html' %}
+{% load static %}
+ 
+{% block main_class %}home{% endblock %}
+ 
+{% block content %}
+<div class="hero">
+  <p class="eyebrow">Royaume d'Hyrule</p>
+  <h2>Bienvenue, voyageur</h2>
+  <p>Ce tableau rassemble les quêtes du royaume, les lieux qui composent Hyrule, et un compagnon pour répondre à tes questions sur son univers. Choisis une voie pour commencer ton aventure.</p>
+ 
+  <div class="portal-grid">
+    <div class="portal-card">
+      <svg class="icon-big"><use href="{% static 'images/icons.svg' %}#i-sword"></use></svg>
+      <h3>Les quêtes</h3>
+      <p>Missions en attente et quêtes déjà accomplies par les héros du royaume.</p>
+      {# TODO: {% url 'quests:list' %} #}
+      <a class="enter" href="#">Consulter →</a>
+    </div>
+    <div class="portal-card">
+      <svg class="icon-big"><use href="{% static 'images/icons.svg' %}#i-castle"></use></svg>
+      <h3>Les lieux</h3>
+      <p>Les régions d'Hyrule et les quêtes qui leur sont associées.</p>
+      {# TODO: {% url 'locations:list' %} #}
+      <a class="enter" href="#">Explorer →</a>
+    </div>
+    <div class="portal-card">
+      <svg class="icon-big"><use href="{% static 'images/icons.svg' %}#i-scroll"></use></svg>
+      <h3>ZeldaBot</h3>
+      <p>Un compagnon pour discuter de l'univers de Zelda.</p>
+      {# TODO: {% url 'chatbot:home' %} #}
+      <a class="enter" href="#">Discuter →</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+ 

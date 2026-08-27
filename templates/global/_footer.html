@@ -1,0 +1,16 @@
+{% load static %}
+<footer>
+  <div class="footer-divider">
+    <div class="line"></div>
+    <svg class="icon"><use href="{% static 'images/icons.svg' %}#i-gem"></use></svg>
+    <div class="line"></div>
+  </div>
+  <div class="brand-mini">Hyrule Quest Board</div>
+  <nav>
+    {# TODO: remplacer les href par {% url 'quests:list' %} / 'locations:list' / 'chatbot:home' une fois les apps créées #}
+    <a href="#">Quêtes</a>
+    <a href="#">Lieux</a>
+    <a href="#">ZeldaBot</a>
+  </nav>
+  <div class="credit">Projet pédagogique — Metz Numeric School</div>
+</footer>
