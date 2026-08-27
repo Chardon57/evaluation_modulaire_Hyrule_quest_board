@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hyrule Quest Board — Quêtes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-sword" viewBox="0 0 24 24"><path d="M20 4 10 14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13 17l-2.2 2.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7 11 4 14l2 2 3-2" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" fill="none"/><path d="M15 5l4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="6.5" cy="17.5" r="1.7" fill="currentColor"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 9 4.6-.3 8-4 8-9V5l-8-3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-scroll" viewBox="0 0 24 24"><path d="M6 4h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M6 4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 9h7M9 13h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-gem" viewBox="0 0 24 24"><path d="M4 9 8 4h8l4 5-8 11z" fill="currentColor" stroke="currentColor" stroke-width="1"/></symbol>
+</svg>
+
+<header class="board">
+  <div class="brand">
+    <div class="torch"><div class="flame"></div><div class="stick"></div></div>
+    <div>
+      <h1>Hyrule Quest Board</h1>
+      <small>Le tableau des quêtes du royaume</small>
+    </div>
+    <div class="torch"><div class="flame"></div><div class="stick"></div></div>
+  </div>
+  <nav class="tabs">
+    <a href="#" class="active">Quêtes</a>
+    <a href="#">Lieux</a>
+    <a href="#">ZeldaBot</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <p class="eyebrow">Royaume d'Hyrule</p>
+    <h2>Les quêtes du royaume</h2>
+    <p>Toutes les missions confiées par les habitants d'Hyrule, qu'elles attendent encore un héros ou qu'elles aient déjà été résolues.</p>
+  </div>
+
+  <div class="toggle-row">
+    <span class="pill on">Disponibles</span>
+    <span class="pill">Terminées</span>
+  </div>
+
+  <div class="quest-grid">
+
+    <div class="quest-card">
+      <div class="quest-top">
+        <svg class="icon" style="color:var(--forest)"><use href="#i-sword"></use></svg>
+        <span class="ribbon available">Disponible</span>
+      </div>
+      <h4>L'épée scellée</h4>
+      <div class="quest-loc">Forêt Kokiri</div>
+      <div class="gems">
+        <svg class="icon" style="width:12px;height:12px;color:var(--gold)"><use href="#i-gem"></use></svg>
+        <svg class="icon" style="width:12px;height:12px;color:var(--gold)"><use href="#i-gem"></use></svg>
+        <svg class="icon" style="width:12px;height:12px;color:#cbb98a"><use href="#i-gem"></use></svg>
+      </div>
+      <p class="quest-desc">Retrouver l'arme légendaire cachée dans le temple englouti.</p>
+      <a class="details" href="#">Voir la quête →</a>
+    </div>
+
+    <div class="quest-card">
+      <div class="quest-top">
+        <svg class="icon" style="color:var(--forest)"><use href="#i-shield"></use></svg>
+        <span class="ribbon available">Disponible</span>
+      </div>
+      <h4>Le gardien du volcan</h4>
+      <div class="quest-loc">Mont de la Braise</div>
+      <div class="gems">
+        <svg class="icon" style="width:12px;height:12px;color:var(--gold)"><use href="#i-gem"></use></svg>
+        <svg class="icon" style="width:12px;height:12px;color:var(--gold)"><use href="#i-gem"></use></svg>
+        <svg class="icon" style="width:12px;height:12px;color:var(--gold)"><use href="#i-gem"></use></svg>
+      </div>
+      <p class="quest-desc">Affronter le gardien de pierre pour rouvrir le passage nord.</p>
+      <a class="details" href="#">Voir la quête →</a>
+    </div>
+
+    <div class="quest-card">
+      <div class="quest-top">
+        <svg class="icon" style="color:#8a7a5c"><use href="#i-scroll"></use></svg>
+        <span class="ribbon done">Terminée</span>
+      </div>
+      <h4>Le message du hibou</h4>
+      <div class="quest-loc">Village Cocorico</div>
+      <div class="gems">
+        <svg class="icon" style="width:12px;height:12px;color:#cbb98a"><use href="#i-gem"></use></svg>
+        <svg class="icon" style="width:12px;height:12px;color:#cbb98a"><use href="#i-gem"></use></svg>
+        <svg class="icon" style="width:12px;height:12px;color:#cbb98a"><use href="#i-gem"></use></svg>
+      </div>
+      <p class="quest-desc">Livrer le parchemin scellé à l'ancien du village.</p>
+      <a class="details" href="#">Voir la quête →</a>
+    </div>
+
+    <div class="quest-card">
+      <div class="quest-top">
+        <svg class="icon" style="color:var(--forest)"><use href="#i-sword"></use></svg>
+        <span class="ribbon available">Disponible</span>
+      </div>
+      <h4>La cloche engloutie</h4>
+      <div class="quest-loc">Lac Hylia</div>
+      <div class="gems">
+        <svg class="icon" style="width:12px;height:12px;color:var(--gold)"><use href="#i-gem"></use></svg>
+        <svg class="icon" style="width:12px;height:12px;color:var(--gold)"><use href="#i-gem"></use></svg>
+        <svg class="icon" style="width:12px;height:12px;color:#cbb98a"><use href="#i-gem"></use></svg>
+      </div>
+      <p class="quest-desc">Plonger dans les eaux du lac pour retrouver la cloche du sanctuaire.</p>
+      <a class="details" href="#">Voir la quête →</a>
+    </div>
+
+    <div class="quest-card">
+      <div class="quest-top">
+        <svg class="icon" style="color:#8a7a5c"><use href="#i-shield"></use></svg>
+        <span class="ribbon done">Terminée</span>
+      </div>
+      <h4>Le sceau du crépuscule</h4>
+      <div class="quest-loc">Château d'Hyrule</div>
+      <div class="gems">
+        <svg class="icon" style="width:12px;height:12px;color:var(--gold)"><use href="#i-gem"></use></svg>
+        <svg class="icon" style="width:12px;height:12px;color:var(--gold)"><use href="#i-gem"></use></svg>
+        <svg class="icon" style="width:12px;height:12px;color:var(--gold)"><use href="#i-gem"></use></svg>
+      </div>
+      <p class="quest-desc">Briser le sceau qui plonge la cour du château dans l'obscurité.</p>
+      <a class="details" href="#">Voir la quête →</a>
+    </div>
+
+    <div class="quest-card">
+      <div class="quest-top">
+        <svg class="icon" style="color:var(--forest)"><use href="#i-scroll"></use></svg>
+        <span class="ribbon available">Disponible</span>
+      </div>
+      <h4>Les lucioles perdues</h4>
+      <div class="quest-loc">Forêt Kokiri</div>
+      <div class="gems">
+        <svg class="icon" style="width:12px;height:12px;color:var(--gold)"><use href="#i-gem"></use></svg>
+        <svg class="icon" style="width:12px;height:12px;color:#cbb98a"><use href="#i-gem"></use></svg>
+        <svg class="icon" style="width:12px;height:12px;color:#cbb98a"><use href="#i-gem"></use></svg>
+      </div>
+      <p class="quest-desc">Guider les lucioles égarées jusqu'à la clairière sacrée.</p>
+      <a class="details" href="#">Voir la quête →</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-divider">
+    <div class="line"></div>
+    <svg class="icon"><use href="#i-gem"></use></svg>
+    <div class="line"></div>
+  </div>
+  <div class="brand-mini">Hyrule Quest Board</div>
+  <nav>
+    <a href="#">Quêtes</a>
+    <a href="#">Lieux</a>
+    <a href="#">ZeldaBot</a>
+  </nav>
+  <div class="credit">Projet pédagogique — Metz Numeric School</div>
+</footer>
+
+</body>
+</html>

@@ -18,8 +18,11 @@ from django.contrib import admin
 from django.urls import path
 
 from pages.views import home
+from quest_board.views import quest_list, quest_detail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name="home_route"),
+    path('quests', quest_list, name="quest_list"),
+    path('quests/<slug:slug>', quest_detail, name="quest_detail"),
 ]

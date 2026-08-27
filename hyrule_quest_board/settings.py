@@ -131,3 +131,7 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
+# settings.py, uniquement si DEBUG = True
+if DEBUG:
+    TEMPLATES[0]["OPTIONS"]["string_if_invalid"] = "⚠ VARIABLE INVALIDE: %s"
