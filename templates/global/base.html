@@ -1,0 +1,31 @@
+{% load static %}
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Hyrule Quest Board"
+    />
+    <title>
+      {% block title %}Hyrule Quest Board - Trouvez votreprochaine aventure{% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body data-page="home">
+    {% include 'global/_header.html' %}
+
+    {% if messages %}
+    <div class="messages container">
+      {% for message in messages %}
+      <div class="message message-{{ message.tags }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <main class="{% block main_class %}{% endblock %}">{% block content %} {% endblock %}</main>
+    {% include 'global/_footer.html' %}
+    </body>
+</html>
