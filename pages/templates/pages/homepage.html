@@ -7,16 +7,17 @@
 {% block content %}
 <div class="hero">
   <p class="eyebrow">Royaume d'Hyrule</p>
-  <h2>Bienvenue, voyageur</h2>
+  <h2>Bienvenue, aventurier</h2>
   <p>Ce tableau rassemble les quêtes du royaume, les lieux qui composent Hyrule, et un compagnon pour répondre à tes questions sur son univers. Choisis une voie pour commencer ton aventure.</p>
+  <p>Il y a actuellement {{nb_quests}} quêtes dans le royaume</p>
  
   <div class="portal-grid">
     <div class="portal-card">
       <svg class="icon-big"><use href="{% static 'images/icons.svg' %}#i-sword"></use></svg>
       <h3>Les quêtes</h3>
-      <p>Missions en attente et quêtes déjà accomplies par les héros du royaume.</p>
+      <p>{{nb_available_quest}} missions en attente et {{nb_finished_quest}} déjà accomplie(s) par les héros du royaume.</p>
       {# TODO: {% url 'quests:list' %} #}
-      <a class="enter" href="#">Consulter →</a>
+      <a class="enter" href="{% url 'quest_list' %}">Consulter →</a>
     </div>
     <div class="portal-card">
       <svg class="icon-big"><use href="{% static 'images/icons.svg' %}#i-castle"></use></svg>

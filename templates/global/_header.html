@@ -4,14 +4,14 @@
   <div class="brand">
     <div class="torch"><div class="flame"></div><div class="stick"></div></div>
     <div>
-      <h1>Hyrule Quest Board</h1>
+      <h1><a href="{% url 'home_route' %}">Hyrule Quest Board</a></h1>
       <small>Le tableau des quêtes du royaume</small>
     </div>
     <div class="torch"><div class="flame"></div><div class="stick"></div></div>
   </div>
   <nav class="tabs">
     {# TODO: remplacer les href par {% url 'quests:list' %} / 'locations:list' / 'chatbot:home' une fois les apps créées #}
-    <a href="#">Quêtes</a>
+    <a href="{% url 'quest_list' %}">Quêtes</a>
     <a href="#">Lieux</a>
     <a href="#">ZeldaBot</a>
   </nav>

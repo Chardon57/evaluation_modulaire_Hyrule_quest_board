@@ -14,8 +14,9 @@
     </div>
 
     <div class="toggle-row">
-        <span class="pill on">Disponibles</span>
-        <span class="pill">Terminées</span>
+        <a href="{% url 'quest_list' %}?selected=available"><span class="pill {% if current_selected == 'available' %}on{% endif %}">Disponibles</span></a>
+        <a href="{% url 'quest_list' %}?selected=finished"><span class="pill {% if current_selected == 'finished' %}on{% endif %}">Terminées</span></a>
+        <a href="{% url 'quest_list' %}"><span class="pill {% if not current_selected %}on{% endif %}">Toutes</span></a>
     </div>
 
     <div class="quest-grid">
@@ -29,15 +30,13 @@
             <span class="ribbon available">Disponible</span>
             {% endif %}
         </div>
-        <h4>{{quest.name}}</h4>
+        <h4><a class="details" href="{% url 'quest_detail' slug=quest.slug %}">{{quest.name}}</a></h4>
         <div class="quest-loc">{{quest.place}}</div>
         <span class="difficulty {{ quest.difficulty_level|lower }}">{{ quest.get_difficulty_level_display }}</span>
-        <p class="quest-desc">{{quest.description}}</p>
         <span class="reward">
         <svg class="icon"><use href="{% static 'images/icons.svg' %}#i-gem"></use></svg>
         {{ quest.reward }} rubis
         </span>
-        <a class="details" href="{% url 'quest_detail' slug=quest.slug %}">Voir la quête →</a>
         </div>
         {% endfor %}
 
