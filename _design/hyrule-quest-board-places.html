@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hyrule Quest Board — Lieux</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-sword" viewBox="0 0 24 24"><path d="M20 4 10 14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13 17l-2.2 2.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7 11 4 14l2 2 3-2" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" fill="none"/><path d="M15 5l4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="6.5" cy="17.5" r="1.7" fill="currentColor"/></symbol>
+</svg>
+
+<header class="board">
+  <div class="brand">
+    <div class="torch"><div class="flame"></div><div class="stick"></div></div>
+    <div>
+      <h1>Hyrule Quest Board</h1>
+      <small>Le tableau des quêtes du royaume</small>
+    </div>
+    <div class="torch"><div class="flame"></div><div class="stick"></div></div>
+  </div>
+  <nav class="tabs">
+    <a href="#">Quêtes</a>
+    <a href="#" class="active">Lieux</a>
+    <a href="#">ZeldaBot</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <p class="eyebrow">Royaume d'Hyrule</p>
+    <h2>Les lieux d'Hyrule</h2>
+    <p>Chaque région du royaume porte ses propres légendes et ses propres quêtes. Choisis une destination pour découvrir ce qui t'y attend.</p>
+  </div>
+
+  <div class="place-grid">
+
+    <div class="place-card">
+      <img class="place-illustration" src="static/images/regions/region-chateau.svg" alt="Château d'Hyrule">
+      <div class="place-body">
+        <h3>Château d'Hyrule</h3>
+        <span class="place-count">
+          <svg class="icon"><use href="#i-sword"></use></svg>
+          2 quêtes
+        </span>
+        <br>
+        {# TODO: {% url 'quest_list' %}?place=chateau-d-hyrule #}
+        <a class="enter" href="#">Explorer →</a>
+      </div>
+    </div>
+
+    <div class="place-card">
+      <img class="place-illustration" src="static/images/regions/region-foret.svg" alt="Forêt Kokiri">
+      <div class="place-body">
+        <h3>Forêt Kokiri</h3>
+        <span class="place-count">
+          <svg class="icon"><use href="#i-sword"></use></svg>
+          2 quêtes
+        </span>
+        <br>
+        {# TODO: {% url 'quest_list' %}?place=foret-kokiri #}
+        <a class="enter" href="#">Explorer →</a>
+      </div>
+    </div>
+
+    <div class="place-card">
+      <img class="place-illustration" src="static/images/regions/region-volcan.svg" alt="Mont de la Braise">
+      <div class="place-body">
+        <h3>Mont de la Braise</h3>
+        <span class="place-count">
+          <svg class="icon"><use href="#i-sword"></use></svg>
+          1 quête
+        </span>
+        <br>
+        {# TODO: {% url 'quest_list' %}?place=mont-de-la-braise #}
+        <a class="enter" href="#">Explorer →</a>
+      </div>
+    </div>
+
+    <div class="place-card">
+      <img class="place-illustration" src="static/images/regions/region-village.svg" alt="Village Cocorico">
+      <div class="place-body">
+        <h3>Village Cocorico</h3>
+        <span class="place-count">
+          <svg class="icon"><use href="#i-sword"></use></svg>
+          1 quête
+        </span>
+        <br>
+        {# TODO: {% url 'quest_list' %}?place=village-cocorico #}
+        <a class="enter" href="#">Explorer →</a>
+      </div>
+    </div>
+
+    <div class="place-card">
+      <img class="place-illustration" src="static/images/regions/region-lac.svg" alt="Lac Hylia">
+      <div class="place-body">
+        <h3>Lac Hylia</h3>
+        <span class="place-count">
+          <svg class="icon"><use href="#i-sword"></use></svg>
+          1 quête
+        </span>
+        <br>
+        {# TODO: {% url 'quest_list' %}?place=lac-hylia #}
+        <a class="enter" href="#">Explorer →</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-divider">
+    <div class="line"></div>
+    <svg class="icon" style="color:var(--gold-bright)"><use href="#i-sword"></use></svg>
+    <div class="line"></div>
+  </div>
+  <div class="brand-mini">Hyrule Quest Board</div>
+  <nav>
+    <a href="#">Quêtes</a>
+    <a href="#">Lieux</a>
+    <a href="#">ZeldaBot</a>
+  </nav>
+  <div class="credit">Projet pédagogique — Metz Numeric School</div>
+</footer>
+
+</body>
+</html>

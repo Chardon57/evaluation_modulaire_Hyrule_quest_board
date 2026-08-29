@@ -27,3 +27,13 @@ def quest_detail(request, slug:str):
     }
 
     return render(request, "quest_board/quest_detail.html", context)
+
+def places_list(request):
+    places = Places.objects.all()
+    context = {
+        'places': places
+    }
+    return render(request, "quest_board/places_list.html", context)
+
+def place_detail(request):
+    return render(request, "quest_board/place_detail.html")

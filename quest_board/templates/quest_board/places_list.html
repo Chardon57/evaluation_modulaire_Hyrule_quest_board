@@ -1,0 +1,33 @@
+{% extends 'global/base.html' %}
+
+{% load static %}
+
+{# Classes appliquées à la balise <main> de base.html #}
+{% block main_class %}product-page container{% endblock %}
+{% block title %}Hyrule Quest Board{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <p class="eyebrow">Royaume d'Hyrule</p>
+    <h2>Les lieux d'Hyrule</h2>
+    <p>Chaque région du royaume porte ses propres légendes et ses propres quêtes. Choisis une destination pour découvrir ce qui t'y attend.</p>
+  </div>
+
+  <div class="place-grid">
+    {% for place in places %}
+    <div class="place-card">
+      <img class="place-illustration" src="{{ place.image_url }}" alt="{{ place.name }}">
+      <div class="place-body">
+        <h3>Château d'Hyrule</h3>
+        <span class="place-count">
+          <svg class="icon"><use href="#i-sword"></use></svg>
+          2 quêtes
+        </span>
+        <br>
+        {# TODO: {% url 'quest_list' %}?place=chateau-d-hyrule #}
+        <a class="enter" href="#">Explorer →</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endblock %}
