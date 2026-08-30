@@ -18,14 +18,14 @@
     <div class="place-card">
       <img class="place-illustration" src="{{ place.image_url }}" alt="{{ place.name }}">
       <div class="place-body">
-        <h3>Château d'Hyrule</h3>
+        <h3>{{place.name}}</h3>
         <span class="place-count">
-          <svg class="icon"><use href="#i-sword"></use></svg>
-          2 quêtes
+          <svg class="icon"><use href="{% static 'images/icons.svg' %}#i-sword"></use></svg>
+          {{place.nb_quests}} quêtes
         </span>
         <br>
         {# TODO: {% url 'quest_list' %}?place=chateau-d-hyrule #}
-        <a class="enter" href="#">Explorer →</a>
+        <a class="enter" href="{% url 'place_detail' slug=place.slug %}">Explorer →</a>
       </div>
     </div>
     {% endfor %}

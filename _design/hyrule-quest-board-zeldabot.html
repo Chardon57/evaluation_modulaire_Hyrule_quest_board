@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hyrule Quest Board — ZeldaBot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-sword" viewBox="0 0 24 24"><path d="M20 4 10 14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13 17l-2.2 2.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7 11 4 14l2 2 3-2" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" fill="none"/><path d="M15 5l4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="6.5" cy="17.5" r="1.7" fill="currentColor"/></symbol>
+  <symbol id="i-scroll" viewBox="0 0 24 24"><path d="M6 4h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M6 4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 9h7M9 13h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M4 12 20 4 13 20l-2-6-6-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="board">
+  <div class="brand">
+    <div class="torch"><div class="flame"></div><div class="stick"></div></div>
+    <div>
+      <h1>Hyrule Quest Board</h1>
+      <small>Le tableau des quêtes du royaume</small>
+    </div>
+    <div class="torch"><div class="flame"></div><div class="stick"></div></div>
+  </div>
+  <nav class="tabs">
+    <a href="#">Quêtes</a>
+    <a href="#">Lieux</a>
+    <a href="#" class="active">ZeldaBot</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <p class="eyebrow">Royaume d'Hyrule</p>
+    <h2>ZeldaBot</h2>
+    <p>Un sage numérique qui connaît les légendes d'Hyrule. Pose-lui tes questions sur cet univers — il ne répond qu'à celles-ci.</p>
+  </div>
+
+  <div class="chat-window">
+
+    <div class="chat-row user">
+      <div class="chat-avatar user"><svg class="icon"><use href="#i-sword"></use></svg></div>
+      <div class="chat-bubble user">Salut ZeldaBot ! Qui es-tu ?</div>
+    </div>
+
+    <div class="chat-row bot">
+      <div class="chat-avatar bot"><svg class="icon"><use href="#i-scroll"></use></svg></div>
+      <div class="chat-bubble bot">Ah, un voyageur se présente à moi. Je suis ZeldaBot, gardien de la mémoire d'Hyrule. Pose-moi tes questions sur ce royaume, et j'y répondrai du mieux que je peux, comme le ferait un sage de la forêt.</div>
+    </div>
+
+    <div class="chat-row user">
+      <div class="chat-avatar user"><svg class="icon"><use href="#i-sword"></use></svg></div>
+      <div class="chat-bubble user">Quelle est la meilleure façon de vaincre un gardien de pierre ?</div>
+    </div>
+
+    <div class="chat-row bot">
+      <div class="chat-avatar bot"><svg class="icon"><use href="#i-scroll"></use></svg></div>
+      <div class="chat-bubble bot">Les gardiens de pierre craignent la lumière et le feu, jeune héros. Cherche une torche ou une lame enflammée avant de les affronter, et frappe leur point faible lorsqu'ils reculent.</div>
+    </div>
+
+    <div class="chat-row user">
+      <div class="chat-avatar user"><svg class="icon"><use href="#i-sword"></use></svg></div>
+      <div class="chat-bubble user">Quelle est la capitale de la France ?</div>
+    </div>
+
+    <div class="chat-row bot">
+      <div class="chat-avatar bot"><svg class="icon"><use href="#i-scroll"></use></svg></div>
+      <div class="chat-bubble bot">Ta question s'égare hors des terres que je connais, voyageur... Je ne comprends que les récits d'Hyrule. Interroge-moi plutôt sur ses légendes.</div>
+    </div>
+
+  </div>
+
+  <form class="chat-form" method="post" action="#">
+    <input type="text" name="prompt" placeholder="Pose ta question à ZeldaBot..." autocomplete="off">
+    <button type="submit" aria-label="Envoyer"><svg class="icon"><use href="#i-send"></use></svg></button>
+  </form>
+</main>
+
+<footer>
+  <div class="footer-divider">
+    <div class="line"></div>
+    <svg class="icon"><use href="#i-scroll"></use></svg>
+    <div class="line"></div>
+  </div>
+  <div class="brand-mini">Hyrule Quest Board</div>
+  <nav>
+    <a href="#">Quêtes</a>
+    <a href="#">Lieux</a>
+    <a href="#">ZeldaBot</a>
+  </nav>
+  <div class="credit">Projet pédagogique — Metz Numeric School</div>
+</footer>
+
+</body>
+</html>

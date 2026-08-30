@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'quest_board',
     'pages',
+    'bot',
 ]
 
 MIDDLEWARE = [

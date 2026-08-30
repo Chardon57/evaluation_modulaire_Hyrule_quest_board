@@ -187,6 +187,49 @@ a.enter:hover{ filter:brightness(1.08); }
 .place-count{ display:inline-flex; align-items:center; gap:6px; font-size:12px; color: var(--ink-soft); margin-bottom:14px; }
 .place-count .icon{ color: var(--ember); width:13px; height:13px; }
 
+/* ---- 9ter. Titre de section sur fond bois (hors .hero) ---- */
+.section-title{
+  text-align:center; color: var(--parchment); font-size:22px;
+  margin: 34px 0 20px; letter-spacing:0.5px;
+}
+
+/* ---- 9quater. Fenêtre de conversation (ZeldaBot) ---- */
+.chat-window{ display:flex; flex-direction:column; gap:16px; margin: 26px 0 22px; }
+.chat-row{ display:flex; gap:10px; align-items:flex-end; }
+.chat-row.user{ flex-direction:row-reverse; }
+.chat-avatar{
+  width:34px; height:34px; border-radius:50%; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+}
+.chat-avatar .icon{ width:17px; height:17px; }
+.chat-avatar.bot{ background: linear-gradient(var(--gold-bright), var(--gold)); color: var(--wood-dark); }
+.chat-avatar.user{
+  background: linear-gradient(var(--wood), var(--wood-dark)); color: var(--gold-bright);
+  border:1px solid rgba(224,172,69,0.4);
+}
+.chat-bubble{
+  max-width:72%; padding:12px 16px; font-size:14px; line-height:1.6;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.chat-bubble.bot{ background: var(--parchment); color: var(--ink); border-radius: 14px 14px 14px 3px; }
+.chat-bubble.user{
+  background: linear-gradient(var(--gold-bright), var(--gold)); color: var(--wood-dark);
+  border-radius: 14px 14px 3px 14px; font-weight:500;
+}
+
+.chat-form{ display:flex; gap:8px; margin-bottom:34px; }
+.chat-form input{
+  flex:1; border:2px solid var(--wood); border-radius:8px;
+  padding:11px 14px; font-family:'EB Garamond',serif; font-style:italic; font-size:15px;
+  background:#fbf3dc; color: var(--ink);
+}
+.chat-form input::placeholder{ color:#9c8763; }
+.chat-form button{
+  border:2px solid var(--wood); border-radius:8px; padding:0 20px; cursor:pointer;
+  background: linear-gradient(var(--gold-bright), var(--gold)); color: var(--wood-dark); font-weight:600;
+}
+.chat-form button:hover{ filter:brightness(1.06); }
+
 /* ---- 10. Difficulté de la quête ---- */
 .difficulty{
   display:inline-flex; align-items:center; gap:5px;

@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.db.models import Count
 from django.http import HttpResponse
 from .models import Quest, Places
 
@@ -10,7 +11,6 @@ def quest_list(request):
 
     if current_selected:
         filter_pattern = (current_selected == "finished")
-        print(filter_pattern)
         quests = quests.filter(is_completed=filter_pattern)
         
     context = {
@@ -29,11 +29,17 @@ def quest_detail(request, slug:str):
     return render(request, "quest_board/quest_detail.html", context)
 
 def places_list(request):
-    places = Places.objects.all()
+    places = Places.objects.annotate(nb_quests = Count("quests"))
     context = {
         'places': places
     }
     return render(request, "quest_board/places_list.html", context)
 
-def place_detail(request):
-    return render(request, "quest_board/place_detail.html")
+def place_detail(request, slug:str):
+    place = get_object_or_404(Places, slug=slug)
+    quests = place.quests.all()
+    context = {
+        'place': place,
+        'quests': quests
+    }
+    return render(request, "quest_board/place_detail.html", context)

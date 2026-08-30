@@ -3,7 +3,8 @@ from django.db import models
 # Create your models here.
 class Places(models.Model):
     name = models.CharField("Nom", max_length=100, unique=True)
-    region = models.TextField("Région d'Hyrule")
+    region = models.CharField("Région d'Hyrule", max_length=100)
+    description = models.TextField("Description", default="")
     image_url = models.URLField("adresse complète", max_length=500, default="")
     slug = models.SlugField("identifiant url", max_length=100, unique=True)
 

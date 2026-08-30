@@ -1,0 +1,32 @@
+{% extends 'global/base.html' %}
+
+{% load static %}
+
+{# Classes appliquées à la balise <main> de base.html #}
+{% block main_class %}product-page container{% endblock %}
+{% block title %}Hyrule Quest Board{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <p class="eyebrow">Royaume d'Hyrule</p>
+    <h2>ZeldaBot</h2>
+    <p>Un sage numérique qui connaît les légendes d'Hyrule. Pose-lui tes questions sur cet univers — il ne répond qu'à celles-ci.</p>
+  </div>
+{% csrf_token %}
+<div class="chat-window">
+  {% for message in conversation %}
+  <div class="chat-row {% if message.role == 'user' %}user{% else %}bot{% endif %}">
+    <div class="chat-avatar {% if message.role == 'user' %}user{% else %}bot{% endif %}">
+      {% if message.role == 'user' %}⚔️{% else %}🧝‍♀️{% endif %}
+    </div>
+    <div class="chat-bubble {% if message.role == 'user' %}user{% else %}bot{% endif %}">{{ message.content }}</div>
+  </div>
+  {% endfor %}
+</div>
+
+  <form class="chat-form" method="post" action="{% url 'bot:send' %}">
+  {% csrf_token %}
+  <input type="text" name="prompt" placeholder="Pose ta question à ZeldaBot..." autocomplete="off">
+  <button type="submit" aria-label="Envoyer">📝</button>
+</form>
+{% endblock %}

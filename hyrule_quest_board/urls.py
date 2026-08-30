@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from pages.views import home
 from quest_board.views import quest_list, quest_detail, places_list, place_detail
@@ -27,4 +27,5 @@ urlpatterns = [
     path('quests/<slug:slug>/', quest_detail, name="quest_detail"),
     path('places/', places_list, name='places_list'),
     path('places/<slug:slug>', place_detail, name='place_detail'),
+    path('zeldabot/', include('bot.urls'))
 ]

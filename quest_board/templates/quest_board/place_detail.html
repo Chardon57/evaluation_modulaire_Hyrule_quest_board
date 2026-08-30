@@ -1,0 +1,47 @@
+{% extends 'global/base.html' %}
+
+{% load static %}
+
+{# Classes appliquées à la balise <main> de base.html #}
+{% block main_class %}product-page container{% endblock %}
+{% block title %}Hyrule Quest Board{% endblock %}
+
+{% block content %}
+<a class="back-link" href="{% url 'places_list' %}">← Retour aux lieux</a>
+
+  <div class="detail-card">
+    <img class="detail-illustration" src="{{ place.image_url }}" alt="{{place.name}}">
+    <h1>{{place.name}}</h1>
+    <div class="detail-divider"></div>
+    <p>{{place.region}}</p>
+    <p class="detail-description">
+      {{place.description}}
+    </p>
+  </div>
+
+  <h2 class="section-title">Quêtes de la région</h2>
+
+  <div class="quest-grid">
+    {% for quest in quests %}
+    <div class="quest-card">
+      <div class="quest-top">
+        <svg class="icon" style="color:var(--forest)"><use href="{% static 'images/icons.svg' %}#i-sword"></use></svg>
+        {% if quest.is_completed %}
+            <span class="ribbon done">Terminée</span>
+            {% else %}
+            <span class="ribbon available">Disponible</span>
+            {% endif %}
+      </div>
+      <h4>{{quest.name}}</h4>
+      <span class="difficulty {{quest.difficulty_level|lower}}">{{quest.get_difficulty_level_display}}</span>
+      <span class="reward">
+        <svg class="icon"><use href="{% static 'images/icons.svg' %}#i-gem"></use></svg>
+        {{quest.reward}} rubis
+      </span>
+      <br><br>
+      <a class="details" href="{% url 'quest_detail' slug=quest.slug %}">Voir la quête →</a>
+    </div>
+    {% endfor %}
+
+  </div>
+{% endblock %}

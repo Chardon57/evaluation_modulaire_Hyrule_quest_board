@@ -23,7 +23,7 @@
         {% for quest in quests %}
         <div class="quest-card">
         <div class="quest-top">
-            <svg class="icon" style="color:var(--forest)"><use href="#i-sword"></use></svg>
+            <svg class="icon" style="color:var(--forest)"><use href="{% static 'images/icons.svg' %}#i-sword"></use></svg>
             {% if quest.is_completed %}
             <span class="ribbon done">Terminée</span>
             {% else %}

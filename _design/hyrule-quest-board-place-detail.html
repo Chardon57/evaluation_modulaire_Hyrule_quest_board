@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hyrule Quest Board — Détail du lieu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-sword" viewBox="0 0 24 24"><path d="M20 4 10 14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13 17l-2.2 2.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7 11 4 14l2 2 3-2" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" fill="none"/><path d="M15 5l4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="6.5" cy="17.5" r="1.7" fill="currentColor"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 9 4.6-.3 8-4 8-9V5l-8-3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-gem" viewBox="0 0 24 24"><path d="M4 9 8 4h8l4 5-8 11z" fill="currentColor" stroke="currentColor" stroke-width="1"/></symbol>
+</svg>
+
+<header class="board">
+  <div class="brand">
+    <div class="torch"><div class="flame"></div><div class="stick"></div></div>
+    <div>
+      <h1>Hyrule Quest Board</h1>
+      <small>Le tableau des quêtes du royaume</small>
+    </div>
+    <div class="torch"><div class="flame"></div><div class="stick"></div></div>
+  </div>
+  <nav class="tabs">
+    <a href="#">Quêtes</a>
+    <a href="#" class="active">Lieux</a>
+    <a href="#">ZeldaBot</a>
+  </nav>
+</header>
+
+<main>
+  <a class="back-link" href="#">← Retour aux lieux</a>
+
+  <div class="detail-card">
+    <img class="detail-illustration" src="static/images/regions/region-chateau.svg" alt="Château d'Hyrule">
+    <h1>Château d'Hyrule</h1>
+    <div class="detail-divider"></div>
+    <p class="detail-description">
+      Le Château d'Hyrule domine la vallée depuis des siècles, siège du pouvoir royal et dernier rempart face aux ombres qui rôdent aux frontières du royaume. Ses remparts ont vu passer des générations de héros, et ses tours gardent encore aujourd'hui bien des secrets.
+    </p>
+  </div>
+
+  <h2 class="section-title">Quêtes de la région</h2>
+
+  <div class="quest-grid">
+
+    <div class="quest-card">
+      <div class="quest-top">
+        <svg class="icon" style="color:var(--forest)"><use href="#i-sword"></use></svg>
+        <span class="ribbon available">Disponible</span>
+      </div>
+      <h4>L'ombre du château</h4>
+      <div class="quest-loc">Château d'Hyrule</div>
+      <span class="difficulty hard">Difficile</span>
+      <p class="quest-desc">Une ombre glisse le long des remparts sans que les gardes ne parviennent à l'identifier.</p>
+      <span class="reward">
+        <svg class="icon"><use href="#i-gem"></use></svg>
+        150 rubis
+      </span>
+      <br><br>
+      <a class="details" href="#">Voir la quête →</a>
+    </div>
+
+    <div class="quest-card">
+      <div class="quest-top">
+        <svg class="icon" style="color:#8a7a5c"><use href="#i-shield"></use></svg>
+        <span class="ribbon done">Terminée</span>
+      </div>
+      <h4>Le sceau du crépuscule</h4>
+      <div class="quest-loc">Château d'Hyrule</div>
+      <span class="difficulty hard">Difficile</span>
+      <p class="quest-desc">Briser le sceau qui plonge la cour du château dans l'obscurité.</p>
+      <span class="reward">
+        <svg class="icon"><use href="#i-gem"></use></svg>
+        180 rubis
+      </span>
+      <br><br>
+      <a class="details" href="#">Voir la quête →</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-divider">
+    <div class="line"></div>
+    <svg class="icon"><use href="#i-gem"></use></svg>
+    <div class="line"></div>
+  </div>
+  <div class="brand-mini">Hyrule Quest Board</div>
+  <nav>
+    <a href="#">Quêtes</a>
+    <a href="#">Lieux</a>
+    <a href="#">ZeldaBot</a>
+  </nav>
+  <div class="credit">Projet pédagogique — Metz Numeric School</div>
+</footer>
+
+</body>
+</html>
